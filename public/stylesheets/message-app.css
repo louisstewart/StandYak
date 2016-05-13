@@ -1,0 +1,628 @@
+/*
+    Because I got bored I decided to add some style to the project...
+*/
+
+html,
+body {
+    min-height: 100%;
+    font-family: 'Open Sans',helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: rgb(53,53,53);
+    position: relative;
+    /*background: url('../assets/random_bg.jpg') no-repeat center center fixed;*/
+    background-color: rgb(238,238,238);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+section.menu {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+section.app {
+    height:100%;
+}
+
+
+/**********************************************************************************************************************
+ * TOOL MENU
+ **********************************************************************************************************************/
+
+.dark {
+    background-color: #181a1a;
+    color: rgba(255,255,255,0.6);
+}
+
+.tool-menu {
+    padding: 20px 0;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 30px;
+    position: relative;
+    display: block;
+    -webkit-transition: all 0.30s ease-out;
+    -moz-transition: all 0.30s ease-out;
+    -ms-transition: all 0.30s ease-out;
+    -o-transition: all 0.30s ease-out;
+    transition: all 0.30s ease-out;
+}
+
+.tool-menu-button-box {
+    width: 100%;
+    min-height:70px;
+    text-align: center;
+    font-size: 14px;
+    z-index:100;
+    margin-bottom: 0px;
+}
+
+.tool-menu-button-box.right {
+    text-align: right !important;
+}
+
+.tool-menu-inner {
+    background-color: #101010;
+    width: 100%;
+    min-height:80px;
+    text-align: center;
+    font-size: 14px;
+    z-index:100;
+    padding-top: 15px;
+    position: absolute;
+    top: 110px;
+}
+
+.tool-menu input[type='range'] {
+    max-width: 200px;
+    margin:0 auto;
+}
+
+.tool-menu-buttons {
+    display: inline-block;
+    margin: 0 auto;
+    width: auto;
+}
+
+.btn-circle.pull-left {
+    margin-left: 30px;
+    margin-right: 0px;
+}
+
+.btn-circle.chat {
+    background-color: #ffffff;
+    color: black;
+    border-color: #FFFFFF;
+}
+.drawing-option {
+    margin-bottom: 15px;
+}
+
+.drawing-option.drawing-color,
+.drawing-option.line-width {
+    display: inline-block;
+}
+
+#drawing-mode-options {
+    display: block;
+    margin: 0 auto;
+}
+
+.title {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+h2.title {
+    margin: 8px 0;
+    font-size: 38px;
+}
+
+.form-group {
+    margin: 0 25px;
+}
+label, input {display:inline;}
+
+input {
+    /* margin-left: 5px; */
+}
+
+
+/**********************************************************************************************************************
+ * FOOTER
+ **********************************************************************************************************************/
+
+.footer {
+    background-color: #0c0d0d;
+    bottom: 0;
+    display: block;
+    height: 30px;
+    position: absolute;
+    width:100%;
+    padding-top: 7px;
+    z-index: 1000;
+}
+
+.footer-info-center {
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+    width: 50%;
+    float: none;
+    margin: 0 auto;
+    color: rgba(255,255,255,0.6);
+    font-size: 0.80rem;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.copy-right {
+    color: rgba(255,255,255,0.4);
+    font-size: 0.80rem;
+}
+
+/**********************************************************************************************************************
+ * BUTTONS
+ **********************************************************************************************************************/
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+    margin-right: 30px;
+}
+
+.btn-circle:focus {outline:none;} ::-moz-focus-inner {border:0;}
+.btn-circle.btn-lg {
+    width: 50px;
+    height: 50px;
+    padding: 10px 13px;
+    font-size: 24px;
+    line-height: 1.33;
+    border-radius: 25px;
+}
+.btn-circle.btn-lg > .fa-diamond {
+    margin-left: -1px;
+}
+.btn-circle.btn-xl {
+    width: 70px;
+    height: 70px;
+    padding: 16px 16px;
+    font-size: 34px;
+    line-height: 1.33;
+    border-radius: 35px;
+}
+
+.drawing-option.mode > .btn-info {
+    background-color: white;
+    color: black;
+    border: white;
+}
+
+/**********************************************************************************************************************
+ * AUTH PAGES
+ **********************************************************************************************************************/
+
+.canvas-app,
+.login-section,
+.auth-container,
+.auth-row,
+.auth-col,
+.full-height {
+    height: 100%;
+}
+
+.auth-well {
+    margin-top: 150px;
+    padding: 40px 30px 50px;
+    background-color: rgba(0,0,0,0.7);
+    position: relative;
+    border-radius: 10px;
+    -webkit-transition: background 0.25s;
+    -moz-transition: background 0.25s;
+    -ms-transition: background 0.25s;
+    -o-transition: background 0.25s;
+    transition: background 0.25s;
+}
+
+.auth-well:hover {
+    background-color: rgba(0,0,0,0.7);
+    -webkit-transition: background 0.3s;
+    -moz-transition: background 0.3s;
+    -ms-transition: background 0.3s;
+    -o-transition: background 0.3s;
+    transition: background 0.3s;
+}
+
+.auth-well h1 {
+    color: rgba(255,255,255,0.9);
+    padding-bottom: 10px;
+}
+
+.form-control {
+    margin-bottom: 5px;
+}
+
+/**********************************************************************************************************************
+ * RIBBON
+ **********************************************************************************************************************/
+
+.ribbon {
+    /* The right and left classes determine the side we attach our banner to */
+    position: absolute;
+
+    padding: 2px 0;
+
+    background-color: #0c0d0d;
+
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.15)));
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+    -webkit-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
+    font: 700 13px "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    z-index: 9999;
+    pointer-events: auto;
+
+    -webkit-transition: background-color 0.5s;
+    -moz-transition: background-color 0.5s;
+    -o-transition: background-color 0.5s;
+    transition: background-color 0.5s;
+}
+
+.ribbon:hover {
+    background-color: rgba(0,0,0,0.35);
+    -webkit-transition: background-color 0.5s;
+    -moz-transition: background-color 0.5s;
+    -o-transition: background-color 0.5s;
+    transition: background-color 0.5s;
+}
+
+.ribbon a,
+.ribbon a:hover {
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.5);
+    text-align: center;
+
+    width: 200px;
+    line-height: 20px;
+
+    display: inline-block;
+    padding: 2px 0;
+    border-width: 1px 0;
+    border-style: dotted;
+    border-color: #fff;
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+.ribbon-wrapper {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.fixed {
+    position: fixed;
+}
+.right,.ribbon-wrapper.right {
+    right: 0;
+}
+.left,.ribbon-wrapper.left {
+    left:0;
+}
+
+.ribbon-wrapper.right .ribbon {
+    top:35px;
+
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/**********************************************************************************************************************
+ * BUTTONS
+ **********************************************************************************************************************/
+
+
+.btn-social {
+    margin: 10px auto;
+}
+
+.btn-social>span {
+    position: absolute;
+    left: 0;
+    width: 50px;
+    font-size: 30px;
+    box-sizing: border-box;
+    border-right: 1px solid rgba(0,0,0,0.1);
+}
+
+.btn-social>i {
+    font-style: normal;
+    margin: 0 auto;
+}
+
+.btn-social {
+    border-radius: 2px;
+    color: white;
+    height: 45px;
+    line-height: 45px;
+    display: block;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 70px;
+    padding-right: 20px;
+    text-decoration: none;
+    text-transform: none;
+    margin-bottom: 10px;
+    position: relative;
+    text-shadow: 0px 1px 0px rgba(0,0,0,0.6);
+    width: 100%;
+    font-size: 20px;
+}
+
+.btn-posts,
+.btn-posts:hover{
+    color: white;
+}
+
+.btn-post-text {
+    color: white;
+    background-color: #039BE5;
+}
+
+.google {
+    background: rgb(211, 72, 54);
+}
+
+.btn-social:hover {
+    color: white;
+}
+
+/**********************************************************************************************************************
+ * POSTS
+ **********************************************************************************************************************/
+.post-container {
+    padding-bottom:10px;
+    margin-bottom: 40px;
+}
+
+.post-list {
+    padding: 0;
+}
+
+.post-outer {
+    margin-top: 20px;
+}
+.post {
+    list-style: none;
+    background-color: #fff;
+    /*margin: 10px 0px;*/
+    border: 1px solid;
+    border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+    border-radius: 3px;
+}
+.post.search-bar {
+    border: none;
+    border-radius: 0px;
+}
+
+.post.search-bar input[type="email"] {
+    margin: 8px 0;
+    padding: 20px 15px;
+}
+.post-body {
+    padding: 10px 20px;
+}
+
+.post-footer {
+    
+    background-color: #f6f7f8;
+    border-radius: 0 0 3px 3px;
+    color: #141823;
+    overflow: visible;
+    width: auto;
+
+}
+
+.post-footer-inner {
+    padding: 10px 20px;
+    border-top: solid 1px #e3e3e3;
+}
+
+.post-footer-buttons {
+    display: inline-block;
+}
+
+.post-footer-buttons iframe {
+    display: none;
+}
+
+.like-section {
+    display: inline-block;
+}
+.post-title {
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: rgb(59, 89, 152);
+}
+.post-date {
+    font-size: 12px;
+    color: rgb(145, 151, 163);
+}
+
+.post-image {
+    width: 100%;
+}
+
+.post-content{
+    padding: 10px 0;
+}
+
+.post-content-text {
+    font-size: 14px;
+    font-family: Helvetica,sans-serif;
+    padding-top: 10px;
+}
+
+.post-text {
+    font-size: 14px;
+    padding: 10px 20px;
+}
+
+.post-buttons {
+    padding: 8px 20px;
+    border-top: solid 1px #e3e3e3;
+}
+
+.likes {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.post-image-input,
+.post-image-input:focus {
+    display: block;
+    border:none;
+    font-size: 14px;
+    padding: 10px 20px;
+    outline: none;
+    width:100%;
+}
+
+[contenteditable=true]:empty:before {
+    content: attr(placeholder);
+    color: rgb(55,62,77);
+    outline: none;
+}
+
+[contenteditable=true]:focus {
+    outline: none;
+    color: rgb(55,62,77);
+
+}
+
+textarea {
+    resize: vertical;
+    border: none;
+    padding: 10px 20px;
+    outline:none;
+    overflow: hidden;
+}
+textarea:focus {
+    border: none;
+    outline:none;
+}
+
+/**********************************************************************************************************************
+ * USER PROFILE
+ **********************************************************************************************************************/
+
+.user-profile-button {
+    padding-left: 20px;
+    padding-top: 25px;
+}
+
+.profile-container {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.form-group label {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    text-align: right;
+}
+
+
+.card {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /*box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.4);*/
+    -webkit-transition: all 0.12s ease-in;
+    -moz-transition: all 0.12s ease-in;
+    -o-transition: all 0.12s ease-in;
+    transition: all 0.12s ease-in;
+    overflow: hidden;
+}
+
+.card-top {
+    box-shadow: 0 -6px 25px rgba(0, 0, 0, 0.6); /*box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.4);*/
+    -webkit-transition: all 0.12s ease-in;
+    -moz-transition: all 0.12s ease-in;
+    -o-transition: all 0.12s ease-in;
+    transition: all 0.12s ease-in;
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+.map {
+    margin-top: 10px;
+
+}
+
+.map.collapsed {
+    height: 0;
+}
+
+.user-profile-button > a {
+    color: #fff;
+}
+
+.hover:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+.navbar .navbar-header > a {
+    color: white;
+}
+
+.navbar .navbar-nav > li > a {
+    color:white;
+}
+
+.navbar {
+    margin-bottom: 0px !important;
+}
+
+.container-inner {
+    padding: 0px 20px 20px;
+}
+
+.container-inner.no-bottom {
+    padding-bottom: 0px !important;
+
+}
+
+/*****
+COLOURS
+******/
+
+
+.color-cyan {
+    background-color: #00bcd4;
+}
+
+.color-blue {
+    background-color: #039BE5;
+}

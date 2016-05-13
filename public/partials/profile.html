@@ -1,0 +1,100 @@
+<section>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid profile-bar card color-cyan">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Welcome {{email}}</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="../app">Home</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+
+    <div class="container profile-container" ng-init="searchUser()">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="col-lg-6">
+                    <div class="post-outer col-lg-12" ng-repeat="post in messages">
+                        <div class="post">
+                            <div class="post-body">
+                                <div class="post-inner">
+                                    <div class="post-title">{{post.email}}</div>
+                                    <div class="post-date">{{ post.post_date | date:"yyyy-MM-dd"}} at {{post.post_time}}</div>
+                                </div>
+                                <div class="post-content">
+                                    <div class="image" ng-if="post.type !== null">
+                                        <img ng-src="{{post.content}}" class="post-image" alt="">
+                                    </div>
+
+                                    <p ng-if="modifiers[post.num] !== 1" class="post-content-text" ng-show="post.type === null">{{post.content}}</p>
+                                    <p class="post-content-text" ng-show="post.type !== null">{{post.description}}</p>
+                                    <textarea ng-if="modifiers[post.num] === 1" name="msg{{post.num}}" id="msg{{post.num}}" style="resize: vertical">{{post.content}}</textarea>
+                                </div>
+                            </div>
+                            <div  class="post-footer">
+                                <div class="post-footer-inner">
+                                    <div ng-if="post.likes" class="likes">{{post.likes > 1 ? post.likes+" Likes" : post.likes+" Like"}}</div>
+                                    <a ng-click="deleteMessage(post.num)" class="btn btn-post-text">Delete</a>
+                                    <a ng-if="modifiers[post.num] !== 1" ng-hide="post.type !== null" ng-click="modify(post.num)" class="btn btn-post-text">Modify</a>
+                                    <a ng-if="modifiers[post.num]  === 1" ng-click="save(post.num)" ng-hide class="btn btn-post-text">Save</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-6 create-posts">
+                    <div class="post-outer">
+                        <div class="post create-textmessage">
+                            <div class="post-body">
+                                <div id="text" class="post-text" contenteditable="true" placeholder="What's up?  " data-text-length="255"></div>
+
+                            </div>
+                            <div class="post-buttons">
+                                <a ng-click="postText(false)" class="btn btn-post-text">Post Text</a>
+                                <a ng-click="postText(true)" ng-show="display" class="btn btn-post-text">Post + Locate</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="post-outer">
+                        <div class="post create-textmessage">
+                            <div class="post-body">
+                                <input id="url" type="url" placeholder="Image url" class="post-image-input">
+                                <input id="type" type="text" placeholder="Image type" class="post-image-input" maxlength="6">
+                                <div id="description" class="post-text" contenteditable="true"  data-text-length="50" placeholder="Description... "></div>
+
+                            </div>
+                            <div class="post-buttons">
+                                <a ng-click="postPicture(false)" class="btn btn-post-text">Post Picture</a>
+                                <a ng-click="postPicture(true)" ng-show="display" class="btn btn-post-text">Post + Locate</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="menu dark">
+
+        <div class="footer color-blue">
+            <div class="footer-info-center">
+                <div class="copy-right">
+                    ©{{Date.now() | date:'yyyy'}} LS99
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

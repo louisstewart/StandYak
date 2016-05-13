@@ -1,0 +1,153 @@
+<section class="canvas-app">
+
+	<section  class="canvas-section">
+		<section class="main">
+			<div ng-show="loggedIn()" class="user-profile-button fixed left">
+				<a href="profile">
+					<span class="fa-stack fa-3x circle card hover color-cyan">
+						<i class="fa fa-user  fa-stack-1x"></i>
+					</span>
+				</a>
+			</div>
+			<div  ng-hide="loggedIn()" class="ribbon-wrapper right fixed">
+				<div class="ribbon">
+					<a href="login">Sign In</a>
+				</div>
+			</div>
+			<div  ng-show="loggedIn()" class="ribbon-wrapper right fixed">
+				<div class="ribbon">
+					<a ng-click="logout()">Sign Out</a>
+				</div>
+			</div>
+			<div class="container rounded" ng-init="getLatestPosts()">
+				<div class="docs-list">
+					<div class="container-inner no-bottom">
+						<div class="post card search-bar color-cyan">
+							<div class="col-sm-3 title">
+								<h2 class="title">StandYak</h2>
+							</div>
+							<div class="col-sm-9">
+								<input type="email"
+									   class="form-control"
+									   placeholder="Search for user messages..."
+									   name="email"
+									   ng-model="user.email"
+									   id="email"
+									   required
+									   get-messages
+									   autofocus>
+							</div>
+							<a ng-click="getLatestPosts()" class="btn btn-lg btn-posts">Get Latest</a>
+							<a ng-click="getLikedMessages()" class="btn btn-lg btn-posts">Get Liked Messages</a>
+							<a ng-click="getLocatedMessages()" class="btn btn-lg btn-posts">Get Located Messages</a>
+						</div>
+					</div><!-- /.container-inner -->
+
+					<div class="row">
+						<div class="col-lg-12 post-container">
+							<div class="container-inner">
+
+								<div id="picureMsgs" class="col-lg-6 post-list">
+									<div class="post-outer col-lg-12" ng-repeat="post in posts" ng-if="post.type !== null">
+										<div class="post">
+											<div class="post-body">
+												<div class="post-inner">
+													<div class="post-title">{{post.email}}</div>
+													<div class="post-date">{{ post.post_date | date:"yyyy-MM-dd"}} at {{post.post_time}}</div>
+												</div>
+												<div class="post-content">
+													<div class="image" ng-if="post.type !== null">
+														<img ng-src="{{post.content}}" class="post-image" alt="">
+													</div>
+
+													<p class="post-content-text" ng-show="post.type === null">{{post.content}}</p>
+													<p class="post-content-text" ng-show="post.type !== null">{{post.description}}</p>
+												</div>
+											</div>
+											<div  class="post-footer">
+												<div class="post-footer-inner" ng-if="(loggedIn() && post.email !== email) || post.longitude || post.likes">
+													<div  ng-if="post.likes" class="likes">{{post.likes > 1 ? post.likes+" Likes" : post.likes+" Like"}}</div>
+
+													<div class="post-footer-buttons" >
+														<div class="like-section" ng-show="post.email !== email && loggedIn()">
+															<a ng-click="like(post.email,post.num)" class="btn btn-post-text">Like</a>
+															<a ng-click="unlike(post.email,post.num)" class="btn btn-post-text">Unlike</a>
+														</div>
+														<a ng-click="showMap(hashCode(post.email+post.num))"ng-if="post.longitude" class="likes">Long: {{post.longitude}} Lat: {{post.latitude}}</a>
+														<div ng-if="post.latitude" id="map{{hashCode(post.email+post.num)}}" class="map collapsed" ng-init="genUrl(post.latitude,post.longitude,post.num,post.email)">
+															<iframe data-src="{{urls[post.email+post.num]}}"
+																	frameborder="0"
+																	style="border:0;"
+																	width="200"
+																	height="200"></iframe>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div id="testMsgs" class="col-lg-6 post-list">
+									<div class="post-outer col-lg-12" ng-repeat="post in posts" ng-if="post.type === null">
+										<div class="post">
+											<div class="post-body">
+												<div class="post-inner">
+													<div class="post-title">{{post.email}}</div>
+													<div class="post-date">{{ post.post_date | date:"yyyy-MM-dd"}} at {{post.post_time}}</div>
+												</div>
+												<div class="post-content">
+													<p class="post-content-text" ng-show="post.type === null">{{post.content}}</p>
+												</div>
+											</div>
+											<div  class="post-footer" >
+												<div class="post-footer-inner" ng-if="(loggedIn() && post.email !== email) || post.longitude || post.likes">
+													<div  ng-if="post.likes" class="likes">{{post.likes > 1 ? post.likes+" Likes" : post.likes+" Like"}}</div>
+
+													<div class="post-footer-buttons" >
+														<div class="like-section" ng-show="post.email !== email && loggedIn()">
+															<a ng-click="like(post.email,post.num)" class="btn btn-post-text">Like</a>
+															<a ng-click="unlike(post.email,post.num)" class="btn btn-post-text">Unlike</a>
+														</div>
+														<a ng-click="showMap(hashCode(post.email+post.num))"ng-if="post.longitude" class="likes">Long: {{post.longitude}} Lat: {{post.latitude}}</a>
+														<div ng-if="post.latitude" id="map{{hashCode(post.email+post.num)}}" class="map collapsed" ng-init="genUrl(post.latitude,post.longitude,post.num,post.email)">
+															<iframe data-src="{{urls[post.email+post.num]}}"
+																	frameborder="0"
+																	style="border:0;"
+																	width="200"
+																	height="200"></iframe>
+														</div>
+													</div>
+												</div>
+
+
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+							</div><!-- /.container-inner -->
+						</div>
+						<br><br>
+					</div>
+				</div>
+			</div>
+
+		</section>
+
+		<section class="dark menu card-top">
+
+
+			<div class="footer color-blue">
+				<div class="footer-info-center">
+					<div class="copy-right">
+						©{{Date.now() | date:"yyyy" }} LS99
+					</div>
+				</div>
+			</div>
+
+		</section>
+	</section>
+
+</section>
